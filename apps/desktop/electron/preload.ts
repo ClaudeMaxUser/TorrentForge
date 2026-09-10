@@ -1,15 +1,40 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-// Expose IPC API to renderer
+// Expose structured IPC API to renderer with JSON-RPC wrapper
 contextBridge.exposeInMainWorld("electronAPI", {
-  getTorrents: () => ipcRenderer.invoke("get-torrents"),
-  addTorrent: (file: string) => ipcRenderer.invoke("add-torrent", file),
-  removeTorrent: (id: string) => ipcRenderer.invoke("remove-torrent", id),
-  pauseTorrent: (id: string) => ipcRenderer.invoke("pause-torrent", id),
-  resumeTorrent: (id: string) => ipcRenderer.invoke("resume-torrent", id),
+  // Torrent management
+  addTorrent: (filePath: string) =>
+    ipcRenderer.invoke("torrent-add", filePath),
+  removeTorrent: (id: string) =>
+    ipcRenderer.invoke("torrent-remove", id),
+  pauseTorrent: (id: string) =>
+    ipcRenderer.invoke("torrent-pause", id),
+  resumeTorrent: (id: string) =>
+    ipcRenderer.invoke("torrent-resume", id),
+  getTorrents: () =>
+    ipcRenderer.invoke("torrent-list"),
+  getTorrentInfo: (id: string) =>
+    ipcRenderer.invoke("torrent-info", id),
 
-  // Event listeners
-  onTorrentUpdate: (callback: (data: any) => void) => {
-    ipcRenderer.on("torrent-update", (_, data) => callback(data));
+  // Engine control
+  getEngineStatus: () =>
+    ipcRenderer.invoke("engine-status"),
+  getEngineConfig: () =>
+    ipcRenderer.invoke("engine-config"),
+  shutdown: () =>
+    ipcRenderer.invoke("engine-shutdown"),
+
+  // Event listeners for engine events
+  onEngineEvent: (callback: (event: any, data: any) => void) => {
+    ipcRenderer.on("engine-event", callback);
+  },
+
+  onTorrentUpdate: (callback: (event: any, data: any) => void) => {
+    ipcRenderer.on("torrent-update", callback);
+  },
+
+  onPeerUpdate: (callback: (event: any, data: any) => void) => {
+    ipcRenderer.on("peer-update", callback);
   },
 });
+

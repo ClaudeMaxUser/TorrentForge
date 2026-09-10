@@ -47,7 +47,7 @@ Preferred architecture:
 ┌─────────────────────────────────────────────┐
 │             React + TypeScript UI           │
 │                                             │
-│ Dashboard │ Torrents │ Peers │ Speed │ Logs│
+│ Dashboard │ Torrents │ Peers │ Speed │ Logs │
 └──────────────────────┬──────────────────────┘
                        │ IPC
 ┌──────────────────────▼──────────────────────┐
@@ -64,7 +64,7 @@ Preferred architecture:
 │  ├── Piece Scheduler                        │
 │  ├── Disk Manager                           │
 │  ├── DHT / UDP                              │
-│  ├── Magnet Metadata                         │
+│  ├── Magnet Metadata                        │
 │  ├── Choking / Rarest-first                 │
 │  ├── Connection Manager                     │
 │  └── Session Manager                        │
@@ -275,7 +275,7 @@ Determine info hash
 Discover peers
  ┌──────┴─────────┐
  │                │
-Tracker           DHT
+Tracker          DHT
  │                │
  └──────┬─────────┘
         ↓
@@ -461,7 +461,7 @@ Main dashboard:
 │ Torrents   │ Ubuntu ISO                                       │
 │            │ ████████████████████░░░░ 82.4%                   │
 │ + Add      │                                                  │
-│            │ ↓ 18.4 MB/s       ETA 14m                       │
+│            │ ↓ 18.4 MB/s       ETA 14m                        │
 │ Active  3  │                                                  │
 │ Seeding 2  │                                                  │
 │ Completed  │                                                  │

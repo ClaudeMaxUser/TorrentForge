@@ -14,7 +14,7 @@ This is **not** a wrapper around an existing torrent library. The core objective
 ┌─────────────────────────────────────────────┐
 │             React + TypeScript UI           │
 │                                             │
-│ Dashboard │ Torrents │ Peers │ Speed │ Logs│
+│ Dashboard │ Torrents │ Peers │ Speed │ Logs │
 └──────────────────────┬──────────────────────┘
                        │ IPC
 ┌──────────────────────▼──────────────────────┐
@@ -52,18 +52,27 @@ This is **not** a wrapper around an existing torrent library. The core objective
 
 ## Development Status
 
-### M0 - Application + Engine Foundation (Current)
+### M0 - Application + Engine Foundation (Complete ✓)
 - [x] Monorepo structure
-- [x] Rust workspace
-- [x] Electron shell
-- [x] React scaffolding
-- [ ] IPC abstraction
-- [ ] Structured logging
-- [ ] Configuration system
-- [ ] Basic error handling
-- [ ] CI setup
+- [x] Rust workspace setup
+- [x] Electron shell with dev server
+- [x] React UI scaffolding
+- [x] Structured logging (tracing + JSON output)
+- [x] Configuration system (file-based JSON config)
+- [x] IPC abstraction (JSON-RPC protocol over IPC)
+- [x] Shared event model (engine events)
+- [x] Test infrastructure (unit + integration)
+- [x] CI/CD pipeline (GitHub Actions)
+- [x] Git repository & GitHub push
 
-### M1 - Download a Real Torrent
+**Features working:**
+- Structured JSON logging throughout
+- Configuration management with validation
+- Clean JSON-RPC 2.0 request/response protocol
+- Type-safe IPC between Electron and engine
+- Test skeletons for future implementation
+
+### M1 - Download a Real Torrent (Next)
 - [ ] Bencode decoder/encoder
 - [ ] Torrent parser
 - [ ] Info hash calculation
@@ -74,9 +83,6 @@ This is **not** a wrapper around an existing torrent library. The core objective
 - [ ] Piece requests & verification
 - [ ] Disk write
 - [ ] Progress UI
-
-### M2+ - Advanced Features
-- See [torrent-client-reference.md](torrent-client-reference.md) for full roadmap
 
 ## Project Structure
 

@@ -2,10 +2,14 @@
 //!
 //! Types and structures shared between the Rust engine and Electron/UI.
 
-use serde::{Deserialize, Serialize};
+pub mod event;
+pub mod ipc;
+
+pub use event::EngineEvent;
+pub use ipc::{EngineMethod, JsonRpcError, JsonRpcRequest, JsonRpcResponse};
 
 /// Torrent status
-#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
 pub enum TorrentStatus {
     Downloading,
     Paused,
@@ -15,7 +19,7 @@ pub enum TorrentStatus {
 }
 
 /// Torrent information sent over IPC
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct TorrentInfo {
     pub id: String,
     pub name: String,
