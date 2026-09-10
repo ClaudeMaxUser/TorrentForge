@@ -1,0 +1,10 @@
+[package]
+name = "shared"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Shared types and utilities between engine and IPC"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

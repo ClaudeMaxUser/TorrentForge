@@ -1,0 +1,45 @@
+{
+  "name": "torrent-forge",
+  "version": "0.1.0",
+  "description": "Production-grade BitTorrent client with custom engine",
+  "main": "dist/main.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
+    "dev:main": "tsc --watch",
+    "dev:renderer": "react-scripts start",
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc",
+    "build:renderer": "react-scripts build",
+    "test": "react-scripts test",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^8",
+    "electron": "^27",
+    "electron-builder": "^24",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-scripts": "5.0.1",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.1.1"
+  },
+  "build": {
+    "appId": "com.torrentforge.app",
+    "productName": "Torrent Forge",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}

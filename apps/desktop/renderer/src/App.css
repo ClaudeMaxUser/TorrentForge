@@ -1,0 +1,55 @@
+.App {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.App-header {
+  padding: 2rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.App-header p {
+  margin: 0.5rem 0 0 0;
+  color: #8b949e;
+}
+
+main {
+  padding: 2rem;
+}
+
+.torrents {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.torrents h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.torrents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.torrents li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.torrents li:last-child {
+  border-bottom: none;
+}
