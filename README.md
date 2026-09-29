@@ -84,6 +84,9 @@ This is **not** a wrapper around an existing torrent library. The core objective
 - [ ] Disk write
 - [ ] Progress UI
 
+### M2+ - Advanced Features
+- See [torrent-client-reference.md](torrent-client-reference.md) for full roadmap
+
 ## Project Structure
 
 ```
