@@ -10,6 +10,7 @@ pub mod logging;
 pub mod torrent;
 
 pub use error::{Error, Result};
+pub use torrent::{TorrentMetadata, TorrentParseError};
 
 /// Engine version
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
