@@ -1,7 +1,7 @@
 {
   "name": "torrent-forge",
   "version": "0.1.0",
-  "description": "Production-grade BitTorrent client with custom engine",
+  "description": "Production-oriented BitTorrent client with custom engine",
   "main": "dist/main.js",
   "author": "",
   "license": "MIT",

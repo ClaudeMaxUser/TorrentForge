@@ -72,7 +72,7 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <h1>Torrent Forge</h1>
-        <p>Production-grade BitTorrent Client with Custom Rust Engine</p>
+        <p>Production-oriented BitTorrent Client with Custom Rust Engine</p>
       </header>
 
       <div className="container">

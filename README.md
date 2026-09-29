@@ -1,6 +1,6 @@
 # Torrent Forge
 
-A production-grade, cross-platform BitTorrent client with a custom Rust networking engine, modern React/Electron desktop UI, and advanced peer coordination.
+A production-oriented, cross-platform BitTorrent client with a custom Rust networking engine, modern React/Electron desktop UI, and advanced peer coordination.
 
 ## Project Vision
 
