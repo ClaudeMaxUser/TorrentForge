@@ -7,10 +7,12 @@ pub mod bencode;
 pub mod config;
 pub mod error;
 pub mod logging;
+pub mod peer;
 pub mod torrent;
 pub mod tracker;
 
 pub use error::{Error, Result};
+pub use peer::{Message, PeerConnection, PeerError};
 pub use torrent::{TorrentMetadata, TorrentParseError};
 pub use tracker::{HttpTracker, PeerInfo, TrackerResponse};
 
