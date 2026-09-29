@@ -15,7 +15,7 @@ pub mod tracker;
 pub use error::{Error, Result};
 pub use peer::{Message, PeerConnection, PeerError};
 pub use pieces::{Piece, PieceError, PieceManager, PieceState, StorageManager};
-pub use torrent::{TorrentMetadata, TorrentParseError};
+pub use torrent::{TorrentMetadata, TorrentParseError, TorrentSession, TorrentState};
 pub use tracker::{HttpTracker, PeerInfo, TrackerResponse};
 
 /// Engine version

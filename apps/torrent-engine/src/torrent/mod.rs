@@ -273,6 +273,55 @@ impl TorrentMetadata {
     }
 }
 
+/// Torrent session state
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum TorrentState {
+    /// Newly added, not started
+    Idle,
+    /// Downloading pieces
+    Downloading,
+    /// Paused by user
+    Paused,
+    /// Fully downloaded, now seeding
+    Seeding,
+    /// Completed and stopped
+    Completed,
+    /// Error state
+    Error,
+}
+
+/// A torrent session being managed
+pub struct TorrentSession {
+    /// Metadata about the torrent
+    pub metadata: TorrentMetadata,
+    /// Current state
+    pub state: TorrentState,
+    /// Bytes uploaded
+    pub uploaded: u64,
+    /// Bytes downloaded
+    pub downloaded: u64,
+}
+
+impl TorrentSession {
+    /// Create a new torrent session from metadata
+    pub fn new(metadata: TorrentMetadata) -> Self {
+        TorrentSession {
+            metadata,
+            state: TorrentState::Idle,
+            uploaded: 0,
+            downloaded: 0,
+        }
+    }
+
+    /// Get download progress as percentage
+    pub fn progress(&self) -> f32 {
+        if self.metadata.size == 0 {
+            return 0.0;
+        }
+        (self.downloaded as f32 / self.metadata.size as f32) * 100.0
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
