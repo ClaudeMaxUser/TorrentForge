@@ -8,11 +8,13 @@ pub mod config;
 pub mod error;
 pub mod logging;
 pub mod peer;
+pub mod pieces;
 pub mod torrent;
 pub mod tracker;
 
 pub use error::{Error, Result};
 pub use peer::{Message, PeerConnection, PeerError};
+pub use pieces::{Piece, PieceError, PieceManager, PieceState, StorageManager};
 pub use torrent::{TorrentMetadata, TorrentParseError};
 pub use tracker::{HttpTracker, PeerInfo, TrackerResponse};
 
