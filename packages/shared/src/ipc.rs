@@ -57,6 +57,16 @@ pub enum EngineMethod {
     #[serde(rename = "torrent.info")]
     GetTorrentInfo { id: String },
 
+    // M1 - Download/Peer operations
+    #[serde(rename = "torrent.start_download")]
+    StartDownload { id: String },
+
+    #[serde(rename = "torrent.get_peers")]
+    GetPeers { id: String },
+
+    #[serde(rename = "torrent.peer_info")]
+    GetPeerInfo { id: String },
+
     // Engine control
     #[serde(rename = "engine.status")]
     EngineStatus,
